@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/detail/detail",
+    "pages/choose-package/choose-package",
+    "pages/producer/producer-index/producer-index",
+    "pages/producer/product-list/product-list",
+    "pages/producer/qr-code/qr-code",
+    "pages/producer/record/record",
+    "pages/producer/withdraw/withdraw",
+    "pages/producer/link/link"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "喀客KAKE",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#000",
+    "list": [{
+      "pagePath":"pages/index/index",
+      "text":"逼格"
+    },
+    {
+    "pagePath": "pages/producer/producer-index/producer-index",
+    "text": "分销"
+    }
+    ]
+  }
+}

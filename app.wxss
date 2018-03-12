@@ -1,0 +1,15 @@
+/**app.wxss**/
+@import 'weui.wxss';
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+} 
+.blank {
+  height: 15px;
+  background-color: #f4f4f4;
+}

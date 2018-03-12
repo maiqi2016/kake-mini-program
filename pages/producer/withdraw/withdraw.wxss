@@ -1,0 +1,94 @@
+.blank {
+  height: 40rpx;
+  background-color: #f4f4f4;
+}
+
+.common {
+  width: 93%;
+  height: 109rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #ccc;
+  font-size: 15px;
+}
+
+.img-style {
+  width: 37rpx;
+  height: 37rpx;
+  float: left;
+  margin-top: 36rpx;
+}
+
+.txt {
+  height: 110rpx;
+  line-height: 110rpx;
+  display: inline-block;
+  margin-left: 26rpx;
+}
+
+.right {
+  float: right;
+  color: #989898;
+  line-height: 110rpx;
+}
+
+.all {
+  color: black;
+}
+
+.rest {
+  width: 100%;
+  height: 296rpx;
+}
+
+.rest-money {
+  border: none;
+}
+
+.money {
+  font-size: 56px;
+  margin-left: 80rpx;
+}
+
+.save {
+  width: 93%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #2d3e50;
+  margin: 145rpx auto auto auto;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+}
+
+.account1 {
+  line-height: 109rpx;
+}
+
+.account2 {
+  height: 165rpx;
+}
+
+.p1 {
+  padding-top: 35rpx;
+  margin-left: 63rpx;
+}
+
+.txt2 {
+  font-size: 20px;
+}
+
+.s2 {
+  border: none;
+  background: transparent;
+}
+
+.number {
+  float: right;
+  width: 640rpx;
+  margin-top: 10rpx;
+}
+
+.account3 {
+  line-height: 109rpx;
+  border: none;
+}

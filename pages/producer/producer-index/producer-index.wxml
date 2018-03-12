@@ -1,0 +1,45 @@
+<view class='blank'></view>
+<navigator url="/pages/producer/producer-setting/producer-setting" class="kake-travel">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <view class='txt'>
+    <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+  </view>
+  <image class="arrow-01" src="../../../image/producer/icon/arrow-01.svg"></image>
+</navigator>
+<view class='blank'></view>
+
+<view class='link-info'>
+  <navigator url="/pages/producer/qr-code/qr-code" class="common">
+    <image class="img-style" src="../../../image/producer/icon/two-code.svg"></image>
+    我的二维码
+    <image class="arrow-02" src="../../../image/producer/icon/arrow-01.svg"></image>
+  </navigator>
+
+  <navigator url="/pages/producer/link/link" class="common">
+    <image class="img-style" src="../../../image/producer/icon/popularize-link.svg"></image>
+    我的推广链接
+    <image class="arrow-02" src="../../../image/producer/icon/arrow-01.svg"></image>
+  </navigator>
+</view>
+<view class='blank'></view>
+
+<view class='distribution'>
+  <navigator url="/pages/producer/product-list/product-list" class="common">
+    <image class="img-style" src="../../../image/producer/icon/product-list.svg"></image>
+    分销产品列表
+    <image class="arrow-02" src="../../../image/producer/icon/arrow-01.svg"></image>
+  </navigator>
+
+  <navigator url="/pages/producer/record/record" class="common">
+    <image class="img-style" src="../../../image/producer/icon/record.svg"></image>
+    分销记录
+    <image class="arrow-02" src="../../../image/producer/icon/arrow-01.svg"></image>
+  </navigator>
+
+  <navigator url="/pages/producer/withdraw/withdraw" class="common">
+    <image class="img-style" src="../../../image/producer/icon/get-money.svg"></image>
+    分佣提现
+    <image class="arrow-02" src="../../../image/producer/icon/arrow-01.svg"></image>
+  </navigator>
+</view>
+<view class='blank'></view>

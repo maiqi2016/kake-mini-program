@@ -1,0 +1,70 @@
+<swiper class='swi' indicator-dots="{{indicatorDots}}" indicator-active-color="#ffcc00" indicator-color="white" circular="{{circular}}"
+autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" style='width:750rpx;height:450rpx;'/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='body'>
+  <view class='nav' style='position:{{position}};top:{{top}};z-Index:200'>
+    <view class='n1'>
+      <view class="{{currentTab === 'hotel' ? 'active':''}}" data-tab="hotel" bindtap="className"><view class='hotel'><text>酒店</text></view></view>
+      <view class="{{currentTab === 'eat' ? 'active':''}}" data-tab="eat" bindtap="className"><view class='eat'><text>餐饮</text></view></view>
+      <view class="{{currentTab === 'play' ? 'active':''}}" data-tab="play" bindtap="className"><view class='play'><text>玩乐</text></view></view>
+    </view>
+  </view>
+
+  <!--四个小产品  -->
+  <view class='product-one'>
+    <view class='small' bindtap='changePage'>
+        <image class='photo' style='width: 329rpx;height:220rpx;' mode='aspectFit' src='http://kake-file.oss-cn-shanghai.aliyuncs.com/1187-1149-5979b80324736.jpg'></image>
+        <text class='price'>￥718</text>
+        <text class='txt'>启东 |  恒大海上威尼斯酒店</text>
+    </view>
+
+    <view class='small right'>
+      <image class='photo' style='width: 329rpx;height:220rpx;' mode='aspectFit' src='http://kake-file.oss-cn-shanghai.aliyuncs.com/1187-1149-5979b80324736.jpg'></image>
+      <text class='price'>￥718</text>
+      <text class='txt'>启东 |  恒大海上威尼斯酒店</text>
+    </view>
+
+    <view class='small'>
+      <image class='photo' style='width: 329rpx;height:220rpx;' mode='aspectFit' src='http://kake-file.oss-cn-shanghai.aliyuncs.com/1187-1149-5979b80324736.jpg'></image>
+      <text class='price'>￥718</text>
+      <text class='txt'>启东 |  恒大海上威尼斯酒店</text>
+    </view>
+
+    <view class='small right'>
+      <image class='photo' style='width: 329rpx;height:220rpx;' mode='aspectFit' src='http://kake-file.oss-cn-shanghai.aliyuncs.com/1187-1149-5979b80324736.jpg'></image>
+      <text class='price'>￥718</text>
+      <text class='txt'>启东 |  恒大海上威尼斯酒店</text>
+    </view>
+  </view>
+</view>
+
+<!--酒店产品  -->
+<view class='needhotel'>
+  <!--banner图  -->
+  <image style='width: 750rpx;height:254rpx;'src="http://kake-file.oss-cn-shanghai.aliyuncs.com/1644-1002-5a00106d0087e.gif"></image>
+  <view class='blank'></view>
+  <!--产品  -->
+  <view class='big'>
+    <image style='width: 690rpx;height:300rpx;' mode='aspectFill' src="http://kake-file.oss-cn-shanghai.aliyuncs.com/0144-0418-591a5db06645b.jpg"></image>
+    <text class='price'>￥498</text>
+    <text class='title'>扬州  |  皇冠假日酒店</text>
+    <text class='txt'>千里长河波浪来  扬帆起航下扬州</text>
+  </view>
+
+  <view class='big'>
+    <image style='width: 690rpx;height:300rpx;' mode='aspectFill' src="http://kake-file.oss-cn-shanghai.aliyuncs.com/1528-1943-59916fa8e668f.jpg"></image>
+    <text class='price'>￥498</text>
+    <text class='title'>扬州  |  皇冠假日酒店</text>
+    <text class='txt'>千里长河波浪来  扬帆起航下扬州</text>
+  </view>
+</view>
+
+<!--餐饮  -->
+<view class='needeat'></view>
+  <!-- banner图 -->
+  <image style='width: 750rpx;height:254rpx;'src="http://kake-file.oss-cn-shanghai.aliyuncs.com/1644-1002-5a00106d0087e.gif"></image>

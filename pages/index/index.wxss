@@ -1,0 +1,127 @@
+/* pages/test/test.wxss */
+page{
+    background-color:#fff;
+}
+/*头部  */
+.header{
+  height: 87rpx;
+  padding-top: 18rpx;
+}
+.search {
+  width: 580rpx;
+  height: 68rpx;
+  color: grey;
+  font-size: 17px;
+  padding-left: 70rpx;
+  margin-left: 25rpx;
+  background-color: #efefef;
+}
+.placeholder{
+  color: grey
+}
+/*轮播图  */
+.swi{
+  height: 450rpx;
+}
+
+/*body主体内容  */
+.body .nav {
+    width: 100%;
+    background-color: #33475c;
+}
+.body .nav .n1{
+  height: 122rpx;
+}
+.body .nav .n1 view{
+  display: inline-block;
+  width: 33.3%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+}
+.body .nav view text{
+  display: inline-block;
+  height: 52rpx;
+  width: 100%;
+  margin-top: 70rpx;
+}
+.body .nav .n1 .hotel{
+  background: url("http://source.kakehotels.com/kake/frontend/img/distribution/jiudian.svg") no-repeat 50% 20% / 60rpx
+}
+.body .nav .n1 .eat{
+  background: url("http://source.kakehotels.com/kake/frontend/img/distribution/zizhucan.svg") no-repeat 50% 20% / 60rpx
+}
+.body .nav .n1 .play{
+  background: url("http://source.kakehotels.com/kake/frontend/img/distribution/qinzi.svg") no-repeat 50% 20% / 60rpx
+}
+.active {
+  background-image: linear-gradient(to bottom, #72cdf1, #229bae);
+}
+
+/*4个小产品  */
+.product-one{
+  overflow: hidden;
+  width: 692rpx;
+  margin: 0 auto;
+  padding-top: 55rpx;
+  padding-bottom: 20rpx;
+}
+.product-one .small{
+  position: relative;
+  width: 329rpx;
+  float: left;
+}
+.product-one .small .price{
+  position: absolute;
+  top: 145rpx;
+  left: 0;
+  background-color: rgba(34, 34, 34, 0.8);
+  color: white;
+  text-align: center;
+  padding: 0 10px 0 8px;
+  font-size: 15px;
+}
+.product-one .small .txt{
+  margin-top: 10rpx;
+  height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size:15px; 
+}
+.product-one .right{
+  float: right;
+}
+
+/*酒店产品开始  */
+.needhotel .big{
+  width: 92%;
+  margin: 0 auto;
+  border-top: 1px solid #eee;
+  padding-top: 53rpx;
+  padding-bottom: 20rpx;
+  position: relative;
+}
+.needhotel .big .price{
+  height: 27px;
+  text-align: center;
+  line-height: 30px;
+  color: #fafafa;
+  background-color: rgba(34, 34, 34, 0.8);
+  position: absolute;
+  padding: 0 14px 0 10px;
+  font-size: 22px;
+  margin-top: -45px;
+  display: block;
+}
+.needhotel .big .title{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.needhotel .big .txt{
+  display: block;
+  font-size: 15px;
+  color: #969696;
+  margin-top: 20rpx;
+}

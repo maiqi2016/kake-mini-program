@@ -1,0 +1,74 @@
+
+<!--套餐  -->
+<view class='combo'>
+  <view class=' detail-hotel-1'>
+    <image class='service-p' style='width: 16rpx;height:38rpx;' mode='aspectFit' src='http://source.kakehotels.com/kake/frontend/img/classify.svg'></image>
+    <text style='font-size:18px'>选择套餐</text>
+  </view>
+  <view class='set-menu' wx:for='{{carts}}'>
+
+    <view class='combo_1'>
+      <view class='combo-1'>
+        <view class='lable'>
+           <view class='click-b' bindtap="selectList" data-index="{{index}}"><text class='btn {{item.selected?"color":""}}'></text></view>
+           <text class='title'>{{item.title}}</text>
+           <text class='price'>￥{{item.price}}</text>
+       </view>
+      </view>
+      <view class='combo-2 {{item.selected?"combo-2_view_show":"combo-2_view_hide"}}'>
+        <text></text>
+        <view class='combo-3'>
+          价格有效期：2017.11.1-2017.12.31 周五周六适用含四份早餐
+        </view>
+        <view class='combo-4'>
+          <view class='combo-4-1'>
+                                        购买数量
+                                        (≤3份                                        )
+                                    </view>
+          <view class='combo-4-2'>
+            <text class='reduction' bindtap="reduction" data-index="{{index}}">-</text>
+            <text class='num'>{{item.num}}</text>
+            <text class='add' bindtap="add" data-index="{{index}}">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+</view>
+<view class='blank'></view>
+
+<!--联系人信息  -->
+<view class='linkman'>
+  <view class='detail-hotel-1'>
+    <image class='service-p' style='width: 16rpx;height:38rpx;' mode='aspectFit' src='http://source.kakehotels.com/kake/frontend/img/classify.svg'></image>
+    <text>联系人信息</text>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="text" placeholder="姓名"></input>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_vcode">
+      <view class="weui-cell__bd">
+          <input maxlength="11" class="weui-input" type="number" placeholder="手机号码"></input>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_vcode">
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="number" placeholder="请输入验证码"></input>
+      </view>
+      <view class="weui-cell__ft">
+          <text class="weui-vcode-btn">获取验证码</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--底部固定栏  -->
+<view class='footer'>
+  <view class='price'>
+    ￥
+    <text>{{totalPrice}}</text>
+  </view>
+  <view class='buy' bindtap='pay'>立即付款</view>
+</view>

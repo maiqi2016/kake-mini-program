@@ -1,0 +1,31 @@
+<view class='blank'></view>
+<view class='rest'>
+  <view class='rest-money common'>
+    <image class="img-style" src="../../../image/producer/icon/rest-money.svg"></image>
+    <text class='txt'>佣金余额（元）</text>
+  </view>
+  <view class='money'>0.00</view>
+</view>
+
+<view class='blank'></view>
+<view class='withdraw'>
+  <view class='account1 common'>
+    <image class="img-style" src="../../../image/producer/icon/acount.svg"></image>
+    <text class='txt'>提现账号</text>
+    <text class='right'>AUTO:openid (微信)</text>
+  </view>
+  <view class='account2 common'>
+    <image class="img-style" src="../../../image/producer/icon/withdraw-money.svg"></image>
+    <view class='p1'>提现金额 (≥100)</view>
+    <view class='txt2'>
+      <text class='s1'>￥</text>
+      <input type='number' class='number'></input>
+    </view>
+  </view>  
+  <view class='account3 common'>
+    <text class='right all'>全部提取</text>
+  </view>
+</view>
+
+<view class='blank'></view>
+<view class='save'>确认提取</view>

@@ -1,0 +1,185 @@
+.combo-2_view_hide{
+    display: none;
+}
+.combo-2_view_show{
+    display: block;
+}
+.blank{
+  height: 30rpx;
+}
+.detail-hotel-1{
+  margin: 60rpx 30rpx 30rpx;
+}
+.detail-hotel-1 image{
+  margin-bottom: -5rpx;
+  margin-right: 25rpx;
+}
+.detail-hotel-1 input{
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  height: 88rpx;
+  padding-left: 30rpx;
+  margin: 10rpx 0;
+}
+.set-menu{
+  margin-bottom: 40rpx;
+}
+.combo_1{
+  margin-bottom:30rpx;
+}
+.combo-1{
+  overflow: hidden;
+}
+.lable{
+  font-size: 14px;
+  padding: 6rpx 40rpx;
+  position: relative;
+}
+.click-b{
+  width: 58rpx;
+  height: 60rpx;
+  float: left;
+}
+.btn{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #e5e5e5;
+  margin: 4px 15px 0 0;
+}
+.color{
+  background-color:#ffc81f;
+}
+.lable .title{
+  width: 64%;
+  font-size: 15px;
+  float: left;
+  line-height: 25px;
+}
+.lable .price{
+  float: right;
+  width: 20%;
+  font-size: 18px;
+  text-align: right;
+}
+ .combo-2{
+  position: relative;
+  background-color: #f4f4f4;
+  border-top: 2rpx solid #f4f4f4;
+  border-bottom: 2rpx solid #f4f4f4;
+  padding-bottom: 20rpx;
+  margin-top: 20rpx;
+} 
+.combo-2 text{
+  position: absolute;
+  top: -20rpx;
+  left: 34rpx;
+  width: 0;
+  height: 0;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+ .combo-2 .combo-3{
+  padding-left: 112rpx;
+  padding-right: 30rpx;
+  font-size: 12px;
+  color: #333;
+  margin-top: 24rpx;
+} 
+.combo-4{
+  padding-left: 112rpx;
+  padding-right: 30rpx;
+  margin-top: 36rpx;
+  height: 60rpx;
+}
+.combo-4-1{
+  float: left;
+  font-size: 15px;
+}
+.combo-4-2{
+  display: block;
+  float: right;
+  margin: 18rpx 30rpx auto auto;
+}
+.combo-4-2 .reduction{
+  position: relative;
+  display: block;
+  background: #fff;
+  font-size: 18px;
+  border: 2rpx solid #ddd;
+  float: left;
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 40rpx;
+  font-weight: 100;
+  text-align: center;
+  outline: none;
+}
+.combo-4-2 .num{
+  position: relative;
+  display: block;
+  background: #fff;
+  font-size: 20px;
+  border: 2rpx solid #ddd;
+  float: left;
+  border-left: none;
+  border-right: none;
+  width: 90rpx;
+  height: 52rpx;
+  line-height: 48rpx;
+  text-align: center;
+  box-sizing: border-box;
+  color: #FFCC00;
+}
+.combo-4-2 .add{
+  position: relative;
+  display: block;
+  background: #fff;
+  font-size: 18px;
+  border: 2rpx solid #ddd;
+  float: left;
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 40rpx;
+  font-weight: 100;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+} 
+.linkman{
+  margin-bottom:120rpx;
+
+}
+/*底部  */
+.footer{
+  width: 100%;
+  position: fixed;
+  height: 100rpx;
+  line-height: 100rpx;
+  bottom: 0;
+  color: #ffcc00;
+  background-color: #2d3e50;
+}
+.footer .price{
+  margin-left: 30rpx;
+  font-size: 23px;
+}
+.footer .buy{
+  width: 35%;
+  background-color: #ffc81f;
+  color: black;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center
+}
+.weui-cell{
+  padding: 0 15px;
+}
+.weui-cell::before{
+  border-top:none 
+}
+.weui-vcode-btn{
+  color: #000;
+}
