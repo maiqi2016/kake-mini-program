@@ -1,2 +1,2 @@
-# kake-mini-program
-Mini program for project kake
+# 项目
+喀客酒店预订平台(小程序版)
