@@ -1,8 +1,6 @@
 
 import utils from '../../utils/util.js'
 
-utils.msg('hello amy');
-
 Page({
   data: {
     // 轮播图相关数据
