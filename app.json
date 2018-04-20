@@ -14,20 +14,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "喀客KAKE",
+    "navigationBarTitleText": "喀客酒店预订",
     "navigationBarTextStyle": "#fff"
-  },
-  "tabBar": {
-    "backgroundColor": "#fff",
-    "color": "#000",
-    "list": [{
-      "pagePath":"pages/index/index",
-      "text":"逼格"
-    },
-    {
-    "pagePath": "pages/producer/producer-index/producer-index",
-    "text": "分销"
-    }
-    ]
   }
 }
