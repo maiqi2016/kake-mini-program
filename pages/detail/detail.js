@@ -1,15 +1,13 @@
+import fn from '../../utils/util'
+
+let app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'http://kake-file.oss-cn-shanghai.aliyuncs.com/0077-1778-59cef7cdbe1af.jpg',
-      'http://kake-file.oss-cn-shanghai.aliyuncs.com/0117-1679-59cef7f5a5de4.jpg',
-      'http://kake-file.oss-cn-shanghai.aliyuncs.com/0083-0773-59cef7d3bcd58.jpg',
-      'http://kake-file.oss-cn-shanghai.aliyuncs.com/0088-1800-59cef7d8022f0.jpg'
-    ],
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -19,9 +17,11 @@ Page({
     char_lt: "<",
     char_rt: ">",
     // 详情和预订须知
-    "currentTab":"detail",
+    currentTab:"detail",
     // 返回顶部
-    "display":"none",
+    display:"none",
+
+    detail: {}
   },
 
   changeCurrent: function (e) {
@@ -74,7 +74,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    let that = this
+    app.request(`detail/index&id=${options.id}`).then(function(res) {
+      that.setData({
+        detail: res.data.detail
+      })
+    })
   },
 
   /**

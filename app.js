@@ -1,41 +1,96 @@
-//app.js
+import fn from './utils/util'
+
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              console.log(res);
+    options.query.channel && (this.data.channel = options.query.channel)
+    this.setProxy()
 
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
+    let that = this
+    that.request('mini/init-session').then(function(res) {
+      // set session id
+      wx.setStorageSync('session_id', res.data.session_id)
+      // 登录
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          that.request({
+            url: 'mini/login',
+            data: {
+              code: res.code
             }
+          }).then(function (res) {
+            if (!res.state) {
+              wx.navigateTo({ url: `../../pages/login/login?mpid=${res.info}` })
+            }
+            wx.setStorageSync('user', res.data)
           })
         }
-      }
+      })
     })
   },
-  globalData: {
-    userInfo: null
+
+  setProxy: function () {
+    this.data = new Proxy(this.data, {
+      get: function (target, key, receiver) {
+        if (target[key]) {
+          return Reflect.get(target, key, receiver);
+        }
+
+        let val = wx.getStorageSync(key) || null
+        Reflect.get(target, key, val, receiver)
+
+        return val
+      },
+    });
+  },
+
+  request: function (options, post = false) {
+    
+    let that = this
+    return new Promise(function(resolve, reject) {
+
+      if (fn.isString(options)) {
+        options = {
+          url: options
+        }
+      }
+
+      delete options.success
+      delete options.fail
+
+      let method = post ? 'POST' : 'GET'
+
+      let auto = {
+        method,
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        success: function(res) {
+          resolve(res.data)
+        },
+        fail: function(res) {
+          reject(res)
+        }
+      }
+
+      if (that.data.session_id) {
+        auto.header.Cookie = `KK_SESS=${that.data.session_id}`
+      }
+
+      options = Object.assign(auto, options)
+      options.url = `${that.data.api}${options.url}&mini-program=1`
+
+      wx.request(options)
+    })
+  },
+
+  data: {
+    api: "https://www.kakehotels.com/?r=",
+    channel: 'nubXnej7'
   }
 })

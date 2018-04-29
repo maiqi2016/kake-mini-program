@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+
+<view class="page-body">
+  <form bindsubmit="bindPhone">
+    <view class="page-section">
+      <view class="weui-cells__title">手机号码</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" name="phone" auto-focus placeholder="Phone" value="{{ phone }}"/>
+        </view>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button form-type="submit" class="weui-btn weui-btn_primary">绑定KAKE账号</button>
+    </view>
+  </form>
+</view>
