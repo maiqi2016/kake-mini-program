@@ -1,0 +1,12 @@
+/* pages/login/login.wxss */
+
+@import "../../weui.wxss";
+
+page {
+  background: #f8f8f8;
+}
+
+button.weui-btn_primary {
+  background: #1AAD19;
+  color: #fff;
+}

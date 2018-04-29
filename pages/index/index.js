@@ -1,14 +1,10 @@
 
-import utils from '../../utils/util.js'
+import fn from '../../utils/util.js'
+
+let app = getApp()
 
 Page({
   data: {
-    // 轮播图相关数据
-    imgUrls: [
-      'http://kake-file.oss-cn-shanghai.aliyuncs.com/0970-0607-5a138dfa94513.jpg',
-      'http://kake-file.oss-cn-shanghai.aliyuncs.com/1219-1713-5a138ef3ae1de.jpg',
-      'http://kake-file.oss-cn-shanghai.aliyuncs.com/1527-1893-59fbe1a7da105.png'
-    ],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -16,51 +12,41 @@ Page({
     circular: true,
 
     // 默认tab栏选中酒店
-    "currentTab": "hotel",
-    "position": "static",
-    "top": null
+    currentTab: 0,
+    position: "static",
+    top: null,
+
+    list: {}
   },
-  //请求数据 
-  // getdata: function () {
-  //     var that = this;
-  //     wx.request({
-  //       url: 'https://www.kakehotels.com',
-  //       data: {
-
-  //       },
-  //       header: {
-  //         "Content-Type": "applciation/json"
-  //       },
-  //       method: "GET",
-  //       success: function (res) {
-  //         console.log(res);
-  //         that.setData({
-  //           imgUrls: res.data.result
-  //         })
-  //       },
-  //       fail: function (err) { 
-  //         console.log(err);
-  //       },
-  //       complete: function () { }
-  //     })
-  //   },
-
+  
   //切换背景样式
   className: function (e) {
+    let tab = e.currentTarget.dataset.tab
     this.setData({
-      "currentTab": e.currentTarget.dataset.tab
+      "currentTab": tab
     });
-  },
-  // 跳转页面
-  changePage: function () {
-    wx.navigateTo({
-      url: '../detail/detail'
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
     })
   },
+
   /**
- * 生命周期函数--监听页面加载
- */
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
+    let that = this
+    let si = setInterval(function() {
+      if (app.data.session_id) {
+        app.request(`distribution/items&channel=${app.data.channel}`).then(function (res) {
+          for (let i of res.data.focusList) {
+            i.link_url = fn.parseQueryString(i.link_url)
+          }
+          that.setData({list: res.data})
+        })
+        clearInterval(si)
+      }
+    }, 50)
   },
 
   /**
@@ -116,7 +102,7 @@ Page({
    */
   onPageScroll: function (e) {
     var that = this;
-    if (e.scrollTop >= 250) {
+    if (e.scrollTop >= 261) {
       that.setData({
         "position": "fixed",
         "top": "0"
@@ -127,5 +113,4 @@ Page({
       });
     }
   }
-
 })

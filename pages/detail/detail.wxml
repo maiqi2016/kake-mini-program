@@ -1,19 +1,17 @@
 <scroll-view style="height: 100%;" scroll-y="true">  
 <swiper class='carousel-detail' indicator-dots="{{indicatorDots}}" bindchange="changeCurrent" indicator-active-color="#ffcc00" indicator-color="white" circular="{{circular}}"
 autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{ detail.slave_preview_url }}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image" style='width:750rpx;height:500rpx;'/>
+      <image src="{{ item }}" class="slide-image" style='width:750rpx;height:500rpx;'/>
     </swiper-item>
   </block>
-  <text class="focus-number"> {{char_lt}} {{current}}/ {{imgUrls.length}} {{char_rt}} Sold:98 </text>
+  <text class="focus-number"> {{char_lt}} {{current}}/ {{ detail.slave_preview_url.length }} {{char_rt}} Sold:{{ detail.sell_out }} </text>
 </swiper>
 
 <view class="hotel-detail">
-  <view class="hotel-detail-1">
-                上海 |  虹桥美利亚酒店        
-  </view>
-  <text class="hotel-detail-2-1">虹桥美利亚 热情的西班牙风席卷魔都</text>
+  <view class="hotel-detail-1">{{ detail.product_upstream_name }}</view>
+  <text class="hotel-detail-2-1">{{ detail.title }}</text>
 </view>
 
 <!--酒店详情  导航-->
@@ -28,36 +26,20 @@ autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
 <!--酒店信息  -->
 <view class='detail-hotel_1' wx:if="{{currentTab === 'detail'}}">
   <view class='detail-hotel'>
-    <view class='detail-hotel-1'>
-                费用包含
-    </view>
-    <view class='detail-hotel-2'>
-      <view class='txt'>
-        <text> <text class='w'>【酒店】</text>单卧泳池别墅/双卧泳池别墅1晚 \n</text>
-        <text class='w'>【餐饮】</text>
-        双份早餐
-      </view>
-      <view>下单时请根据您的需求购买对应套餐，以做对应的预约</view>
-    </view>
+    <view class='detail-hotel-1'>费用包含</view>
+    <view>{{ detail.cost }}</view>
   </view>
-  <view class='detail-hotel'>
-    <view class='detail-hotel-2 .detail-hotel_2'>
-      <view style="text-align: center;">
-        香樟华苹位于南京汤山镇寺庄村，可以远眺汤山周边的绿意。Kayumanis“肉桂”（也就是香樟）品牌对于诸多酒店控来说，并不陌生。这是一个来自巴厘岛的低调奢华的酒店集团，在巴厘岛已有3家各具特色的度假村，分别在乌布、Nusa Duwa和金巴兰海滩。南京的香樟华苹是其海外第一家。坐落在南京美丽的汤山脚下，既吸收了中国独特的建筑风格，又延续了巴厘岛的浪漫风情。21套独栋别墅，独门独户，私人管家，私人泳池，私人温泉，私家院落，一切隐密而享受。
-      </view>
-    </view>
-  </view>
-
 </view>
 <!--注意事项  -->
 <view class='notice' wx:if="{{currentTab === 'order'}}">
-  <image src="http://pic.kakehotels.com/1758-1722-59c1c78eb04c1.jpg" class="slide-image" style='width:750rpx' mode='widthFix'/>
+    <view class='detail-hotel-1'>预订需知</view>
+  <view>{{ detail.use }}</view>
 </view>
 
 <!--底部固定栏  -->
 <view class='footer'>
   <view class='buy' bindtap='changePage'>   
-    <view class='price'>￥2818</view>
+    <view class='price'>￥{{ detail.min_price }}</view>
       预订  
   </view>
   <view class='services'>

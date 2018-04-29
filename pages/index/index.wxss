@@ -21,7 +21,8 @@ page{
 }
 /*轮播图  */
 .swi{
-  height: 450rpx;
+  height: 522rpx;
+  background: transparent;
 }
 
 /*body主体内容  */
@@ -46,13 +47,13 @@ page{
   width: 100%;
   margin-top: 70rpx;
 }
-.body .nav .n1 .hotel{
+.body .nav .n1 .classify_0{
   background: url("http://source.kakehotels.com/kake/frontend/img/distribution/jiudian.svg") no-repeat 50% 20% / 60rpx
 }
-.body .nav .n1 .eat{
+.body .nav .n1 .classify_1{
   background: url("http://source.kakehotels.com/kake/frontend/img/distribution/zizhucan.svg") no-repeat 50% 20% / 60rpx
 }
-.body .nav .n1 .play{
+.body .nav .n1 .classify_2{
   background: url("http://source.kakehotels.com/kake/frontend/img/distribution/qinzi.svg") no-repeat 50% 20% / 60rpx
 }
 .active {
@@ -94,7 +95,7 @@ page{
 }
 
 /*酒店产品开始  */
-.needhotel .big{
+.need .big{
   width: 92%;
   margin: 0 auto;
   border-top: 1px solid #eee;
@@ -102,7 +103,7 @@ page{
   padding-bottom: 20rpx;
   position: relative;
 }
-.needhotel .big .price{
+.need .big .price{
   height: 27px;
   text-align: center;
   line-height: 30px;
@@ -114,12 +115,12 @@ page{
   margin-top: -45px;
   display: block;
 }
-.needhotel .big .title{
+.need .big .title{
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 18px;
 }
-.needhotel .big .txt{
+.need .big .txt{
   display: block;
   font-size: 15px;
   color: #969696;

@@ -9,7 +9,8 @@
     "pages/producer/qr-code/qr-code",
     "pages/producer/record/record",
     "pages/producer/withdraw/withdraw",
-    "pages/producer/link/link"
+    "pages/producer/link/link",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
