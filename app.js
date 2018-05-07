@@ -83,14 +83,10 @@ App({
       }
 
       options = Object.assign(auto, options)
-<<<<<<< Updated upstream
-      options.url = `${that.data.api}${options.url}&mini-program=1`
-=======
 
       if (options.url.indexOf('https://') === -1) {
         options.url = `${that.data.api}${options.url}`
       }
->>>>>>> Stashed changes
 
       wx.request(options)
     })
