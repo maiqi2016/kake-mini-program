@@ -55,6 +55,7 @@ Page({
       totalPrice: total.toFixed(2)
     });
   },
+<<<<<<< Updated upstream
   
   // 选择套餐事件
   selectList(e) {
@@ -66,6 +67,35 @@ Page({
       carts: carts
     });
     this.getTotalPrice();                           // 重新获取总价
+=======
+
+  choosePackage: function(e) {
+    const pid = e.currentTarget.dataset.index
+    let d = this.data.d
+    
+    d.packageList[pid].choose = !d.packageList[pid].choose
+    d.packageList[pid].number = d.packageList[pid].choose ? 1 : 0
+    
+    this.setData({d:d})
+    this.countTotalPrice()
+  },
+
+  getCaptcha: function(e) {
+    let that = this
+    app.request({
+      url: 'general/ajax-sms',
+      data: {
+        phone: that.data.d.contact.phone,
+        type: 2
+      }
+    }, true).then(function(res) {
+      if (!res.state) {
+        fn.msg(res.info)
+        return
+      }
+      fn.success(res.info)
+    })
+>>>>>>> Stashed changes
   },
 
   /**
@@ -86,6 +116,45 @@ Page({
    */
   onLoad: function (options) {
 
+<<<<<<< Updated upstream
+=======
+    let data = {
+      product_id: that.data.d.productId,
+      'user_info[name]': that.data.d.contact.real_name,
+      'user_info[phone]': that.data.d.contact.phone,
+      'user_info[captcha]': that.data.d.contact.captcha,
+      payment_method: 'wx'
+    }
+
+    for (let i in pk) {
+      data[`package[${i}]`] = pk[i]
+    }
+
+    app.request({
+      url: 'detail/prefix-payment',
+      data
+    }).then(function(res) {
+      if (!res.state) {
+        fn.msg(res.info)
+        return
+      }
+      app.request(`https:${res.data}`).then(function(res) {
+        if (!res.state) {
+          fn.msg(res.info)
+          return
+        }
+        let data = res.data.json_arr
+        delete data.appId
+        data.success = function(res) {
+          console.log('success:', res)
+        }
+        data.fail = function(res) {
+          console.log('fail:', res)
+        }
+        wx.requestPayment(data)
+      })
+    })
+>>>>>>> Stashed changes
   },
 
   /**
