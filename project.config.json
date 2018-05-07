@@ -40,9 +40,6 @@
 					"id": -1,
 					"name": "detail",
 					"pathName": "pages/detail/detail",
-<<<<<<< Updated upstream
-					"query": "id=114"
-=======
 					"query": "id=107"
 				},
 				{
@@ -50,7 +47,6 @@
 					"name": "choose",
 					"pathName": "pages/choose-package/choose-package",
 					"query": "id=107"
->>>>>>> Stashed changes
 				}
 			]
 		}
