@@ -11,6 +11,7 @@
       </view>
     </view>
     <view class="weui-btn-area">
+      <button open-type="getUserInfo" class="weui-btn weui-btn_primary">同意授权</button>
       <button form-type="submit" class="weui-btn weui-btn_primary">绑定KAKE账号</button>
     </view>
   </form>

@@ -22,12 +22,6 @@ Page({
     this.setData({
       mpid: options.mpid
     })
-
-    wx.getUserInfo({
-      success: function(res) {
-        that.setData({user: res.userInfo})
-      }
-    })
   },
 
   /**
@@ -81,52 +75,37 @@ Page({
 
   bindPhone(e){
     let that = this
-    if (!this.data.user) {
-      wx.showModal({
-        title: '温馨提醒',
-        content: '您当前未授权获取用户信息，是否手动开启用户信息权限。',
-        success: function (res) {
-          if (!res.confirm) {
-            return false
-          }
-          wx.openSetting({
-            success: (res) => {
-              if (!res.authSetting["scope.userInfo"]) {
-                return false
-              }
-              wx.getUserInfo({
-                success: function (res) {
-                  that.setData({user: res.userInfo})
-                }
-              })
-            }
-          })
+
+    wx.getUserInfo({
+      success: function (res) {
+        that.setData({ user: res.userInfo })
+        let phone = e.detail.value.phone
+        
+        if (!fn.verify('phone').test(phone)) {
+          fn.msg('手机号码格式有误，请改正')
+          return
         }
-      })
-      return
-    }
 
-    let phone = e.detail.value.phone
-    if (!fn.verify('phone').test(phone)) {
-      fn.msg('手机号码格式有误，请改正')
-      return
-    }
+        let data = that.data.user
+        data.phone = phone
+        data.mpid = that.data.mpid || ''
 
-    let data = this.data.user
-    data.phone = phone
-    data.mpid = this.data.mpid || ''
-
-    app.request({
-      url: `${app.data.api}mini/bind-phone`,
-      data
-    }, true).then(function(res) {
-      if (!res.state) {
-        fn.msg(res.info)
-        return
+        app.request({
+          url: `${app.data.api}mini/bind-phone`,
+          data
+        }, true).then(function (res) {
+          if (!res.state) {
+            fn.msg(res.info)
+            return
+          }
+          fn.success('用户绑定成功').then(function () {
+            wx.navigateBack()
+          })
+        })
+      },
+      fail: function() {
+        fn.msg('请先点击同意授权按钮并允许')
       }
-      fn.success('用户绑定成功').then(function () {
-        wx.navigateBack()
-      })
     })
   },
 })

@@ -38,10 +38,11 @@ autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
 
 <!--底部固定栏  -->
 <view class='footer'>
-  <view class='buy' bindtap='changePage'>   
-    <view class='price'>￥{{ detail.min_price }}</view>
-      预订  
-  </view>
+  <navigator url="/pages/choose-package/choose-package?id={{ detail.id }}" hover-class="navigator-hover">
+    <view class='buy'>
+      <view class='price'>￥{{ detail.min_price }}</view> 预订
+    </view>
+  </navigator>
   <view class='services'>
     <image class='service-p' style='width: 48rpx;height:48rpx;' mode='aspectFit' src='http://source.kakehotels.com/kake/frontend/img/custom.svg'></image>
 

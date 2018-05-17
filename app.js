@@ -26,8 +26,9 @@ App({
           }).then(function (res) {
             if (!res.state) {
               wx.navigateTo({ url: `../../pages/login/login?mpid=${res.info}` })
+            } else {
+              wx.setStorageSync('user', res.data)
             }
-            wx.setStorageSync('user', res.data)
           })
         }
       })
@@ -68,7 +69,8 @@ App({
       let auto = {
         method,
         header: {
-          "Content-Type": "application/x-www-form-urlencoded"
+          "Content-Type": "application/x-www-form-urlencoded",
+          "X-Requested-With": "XMLHttpRequest"
         },
         success: function(res) {
           resolve(res.data)
