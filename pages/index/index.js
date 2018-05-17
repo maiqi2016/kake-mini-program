@@ -37,7 +37,7 @@ Page({
   onLoad: function (options) {
     let that = this
     let si = setInterval(function() {
-      if (app.data.session_id) {
+      if (app.data.user) {
         app.request(`distribution/items&channel=${app.data.channel}`).then(function (res) {
           for (let i of res.data.focusList) {
             i.link_url = fn.parseQueryString(i.link_url)
